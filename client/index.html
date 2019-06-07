@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Basic online game engine</title>
+	<link rel="stylesheet" type="text/css" href="style/main.css">
+	<link rel="stylesheet" type="text/css" href="style/load-game.css">
+	<link rel="stylesheet" type="text/css" href="style/login.css">
+	<link rel="stylesheet" type="text/css" href="style/main-menu.css">
+	<link rel="stylesheet" type="text/css" href="style/pause-menu.css">
+	<script src='/socket.io/socket.io.js'></script>
+</head>
+<body>
+	<!-- LOAD GAME -->
+	<div id="load-game"></div>
+
+	<!-- LOGIN PAGE -->
+	<div id="login" style="display:none">
+		<ul class="pages">
+			<li class="login page">
+				<div class="form">
+					<h3 class="title">NICKNAME</h3>
+					<input class="usernameInput" type="text" id="username" maxlength="10"/><br>
+					<input type="button" class="confirmButton" onclick="registerPlayer()" value="Entrar">
+				</div>
+			</li>
+		</ul>
+	</div>
+
+	<!-- MAIN MENU -->
+	<div id="main-menu" style="display:none">
+		<h3>MENU PRINCIPAL</h3>
+		<button onclick='startGame()'>INICIAR ENGINE</button>
+	</div>
+
+	<!-- GAME CANVAS -->
+	<canvas style='display:none'></canvas>
+
+	<!-- PAUSE MENU -->
+	<div id="pause-menu" style="display:none">
+		<h4>PAUSE</h4>
+		<button onclick='endGame()'>MENU PRINCIPAL</button>
+	</div>
+</body>
+<!-- own lib -->
+<script src='system/lib.js'></script>
+<!-- canvas -->
+<script src='system/canvas.js'></script>
+<!-- model -->
+<script src='model/player.js'></script>
+<!-- controllers -->
+<script src='controller/player.js'></script>
+<script src='controller/score.js'></script>
+<!-- system -->
+<script src='system/global-config.js'></script>
+<!-- engine -->
+<script src='system/engine.js'></script>
+<!-- game design -->
+<script src='game-design/gamestate.js'></script>
+<script src='game-design/login.js'></script>
+<script src='game-design/main-menu.js'></script>
+<script src='game-design/ingame.js'></script>
+<script src='game-design/keys.js'></script>
+<!-- socket.io connection -->
+<script src='socket.js'></script>
+</html>
